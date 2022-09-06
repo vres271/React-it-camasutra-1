@@ -1,0 +1,16 @@
+.item a{
+  padding: 10px;
+  display: block;
+  text-decoration: none;
+  color: dimgray;
+}
+.item a:hover{
+  background-color:aliceblue;
+}
+
+.item a.active{
+  background-color:gold;
+}
+.item a.active:hover{
+  background-color:rgb(228, 194, 3);
+}

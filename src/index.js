@@ -4,10 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+const testMess = 'Мы любим животных и стараемся поддерживать тех из них, кому не посчастливилось иметь ласковых хозяев и тёплый кров. Один из проверенных способов это сделать — помочь приюту для животных Домашний. У этих ребят живёт более 1500 четвероногих, и благодаря их труду ежегодно сотни питомцев находят свой новый дом.';
+
+const Data = {
+  postsItems: [
+    {name:'Привет как дела', message:testMess, likescount: Math.round(100*Math.random())},
+    {name:'Я уехал на дачу', message:testMess, likescount: Math.round(100*Math.random())},
+    {name:'И вернулся с дачи', message:testMess, likescount: Math.round(100*Math.random())},
+    {name:'Невыносимая легкость бытия', message:testMess, likescount: Math.round(100*Math.random())},
+    {name:'Как дела у меня', message:testMess, likescount: Math.round(100*Math.random())},
+  ]
+}
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <App data={Data}/>
   </React.StrictMode>
 );
 

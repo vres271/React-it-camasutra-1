@@ -1,4 +1,5 @@
-import {renderEntireTree} from  './../render';
+let renderEntireTree = ()=>{console.log('state changhed')};
+
 const testMess = 'Мы любим животных и стараемся поддерживать тех из них, кому не посчастливилось иметь ласковых хозяев и тёплый кров. Один из проверенных способов это сделать — помочь приюту для животных Домашний. У этих ребят живёт более 1500 четвероногих, и благодаря их труду ежегодно сотни питомцев находят свой новый дом.';
 
 let state = {
@@ -47,5 +48,8 @@ export let updateNewPostText = (newText)=>{
     renderEntireTree(state);
 }
 
+export const subscribe = (observer)=>{
+    renderEntireTree = observer;
+}
 
 export default state;

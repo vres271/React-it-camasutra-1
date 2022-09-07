@@ -1,26 +1,30 @@
+import React from 'react';
 import css from './MyPosts.module.css'
 import Post from './Post/Post';
 
-const testMess = 'Мы любим животных и стараемся поддерживать тех из них, кому не посчастливилось иметь ласковых хозяев и тёплый кров. Один из проверенных способов это сделать — помочь приюту для животных Домашний. У этих ребят живёт более 1500 четвероногих, и благодаря их труду ежегодно сотни питомцев находят свой новый дом.';
-let postsItems = [
-  {name:'Привет как дела', message:testMess, likescount: Math.round(100*Math.random())},
-  {name:'Я уехал на дачу', message:testMess, likescount: Math.round(100*Math.random())},
-  {name:'И вернулся с дачи', message:testMess, likescount: Math.round(100*Math.random())},
-  {name:'Невыносимая легкость бытия', message:testMess, likescount: Math.round(100*Math.random())},
-  {name:'Как дела у меня', message:testMess, likescount: Math.round(100*Math.random())},
-];
-const MyPosts = ()=>{
+const MyPosts = (props)=>{
 
+  let newPostElement = React.createRef();
+
+  const addPost = ()=>{
+    props.addPost();
+  }
+
+  const onPostChange = ()=>{
+    let text = newPostElement.current.value;
+    props.updateNewPostText(text);
+  }
+  
   return (
       <div className={css.posts}>
         <h2>My posts</h2>
         <div className="">
-          <div className=""><textarea name="" id="" cols="30" rows="10"></textarea></div>
-          <div className=""><button>Button</button></div>
+          New Post
+          <div className=""><textarea ref={newPostElement} value={props.newPostText} onChange={onPostChange} cols="80" rows="2"></textarea></div>
+          <div className=""><button onClick={addPost}>Add Post</button></div>
         </div>
-        <div>New post</div>
         <div className={css.posts_block}>
-          {postsItems.map((item,key)=><Post name={item.name} message={item.message} likescount={item.likescount} key={key}/>)}
+          {props.posts.map((item,key)=><Post name={item.name} message={item.message} likescount={item.likescount} key={key}/>)}
         </div>
       </div>
   );

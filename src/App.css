@@ -13,23 +13,61 @@
 }
 .header{
   grid-area: h;
+  border-bottom: 1px solid gold;
 }
 .nav{
   grid-area: n;
+  border-right: 3px solid gold;
 }
 .content{
   grid-area: c;
 }
 
 
-div{
+/* div{
   border: 1px dashed rgba(0, 0, 0, 0.087);
   border-collapse: collapse;
-}
+} */
 
 .app-wrapper-content{
   color:rgba(38, 42, 6, 0.94);
 }
 .app-wrapper-content h2{
   padding-left: 20px;
+}
+
+button, input, textarea, select {
+  border: 1px solid silver;
+  border-radius: 5px;
+  padding: 10px;
+  color: rgb(83, 84, 85);
+  outline: none;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+button:hover, input:hover, textarea:hover, select:hover{
+  border: 1px solid rgb(23, 138, 232);
+}
+button{
+  background: rgb(20, 184, 230);
+  padding: 10px 20px;
+  cursor: pointer;
+  color: white;
+}
+button:hover{
+  background: rgb(47, 194, 235);
+  border: 1px solid rgb(37, 158, 191);
+
+}
+button:active{
+  background: rgb(73, 200, 235);
+  border: 1px solid rgb(8, 108, 136);
+}
+button:disabled{
+  background: none;
+  color: silver;
+}
+button:hover:disabled{
+  background: none;
+  border: 1px solid silver;
 }

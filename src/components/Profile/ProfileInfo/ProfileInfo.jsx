@@ -5,7 +5,7 @@ const ProfileInfo = ()=>{
   return (
     <div>
       <div>
-        <img src='https://www.skinali.eu/wp-content/uploads/photo-gallery/laukai_gamta/skinali-207187.jpg'  width='980px' alt=''/>
+        <img src='https://mooka.ie/img/sliderimages/slider-adult-desk-background.jpg'  width='980px' alt=''/>
       </div>
       <div className={css.description_block}>Ava + desc</div>
     </div> 

@@ -8,6 +8,8 @@ const Navbar = ()=>{
             } >Profile</NavLink></div>
       <div  className={css.item}><NavLink to='/dialogs'  className={({ isActive }) =>isActive ? css.active : undefined
             }>Messages</NavLink></div>
+      <div  className={css.item}><NavLink to='/users'  className={({ isActive }) =>isActive ? css.active : undefined
+            }>Users</NavLink></div>
       <div  className={css.item}><NavLink to='/news' className={({ isActive }) =>isActive ? css.active : undefined
             } >News</NavLink></div>
       <div  className={css.item}><NavLink to='/music' className={({ isActive }) =>isActive ? css.active : undefined

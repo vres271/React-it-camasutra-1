@@ -10,23 +10,28 @@ let initialState = {
         {name:'Невыносимая легкость бытия', message:testMess, likescount: Math.round(100*Math.random())},
         {name:'Как дела у меня', message:testMess, likescount: Math.round(100*Math.random())},
     ],
-    newPostText: 'trstdrtsdrtst 3r232',
+    newPostText: 'New post text',
 }
 
 const profileReducer = (state=initialState,action) => {
     switch(action.type) {
         case  ADD_POST:
             let newPost = {
-                id:5,
+                id: state.posts.length+1,
                 name:'New post',
                 message: state.newPostText,
                 likescount: 0,
+            }
+            return {
+                ...state,
+                posts: [... state.posts, newPost],
+                newPostText: '',
+            }
+        case UPDATE_NEW_POST_TEXT: 
+            return {
+                ... state,
+                newPostText: action.newText,
             };
-            state.posts.push(newPost);
-            state.newPostText = '';
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
         default:
             return state;
     }

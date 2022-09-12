@@ -17,14 +17,12 @@
 }
 
 .users .user .user_sidebar img{
-    width: 90px;
-}
-.users .user .user_sidebar button{
-    width: 90px;
+    width: 60px;
+    margin-top: 5px;
 }
 
 .users .user .user_content {
-    width: 840px;
+    width: 780px;
     display: inline-block;
     vertical-align: top;
     margin-left: 15px;
@@ -40,10 +38,17 @@
 .users .user .user_location{
     font-size: 13px;
     font-weight: 600;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .users .user .user_location div{
     display: inline-block;
     margin-right: 5px;
 }
 
+.users .user .user_sidebar_right{
+    display: inline-block;
+    vertical-align: top;
+}
+.users .user .user_sidebar_right button{
+    width: 90px;
+}

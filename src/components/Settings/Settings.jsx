@@ -1,6 +1,3 @@
-import css from './Settings.module.css'
-
-
 const Settings = (props)=>{
   return (
     <div >

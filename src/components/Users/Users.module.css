@@ -1,0 +1,49 @@
+.users{
+    padding: 20px;
+}
+
+.users div{
+    /* border: 1px dashed silver; */
+}
+
+.users .user{
+   margin-bottom: 15px;
+   padding-bottom: 10px;
+   border-bottom: 1px dashed rgb(234, 219, 110);
+}
+
+.users .user .user_sidebar {
+    display: inline-block;
+}
+
+.users .user .user_sidebar img{
+    width: 90px;
+}
+.users .user .user_sidebar button{
+    width: 90px;
+}
+
+.users .user .user_content {
+    width: 840px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 15px;
+}
+.users .user .user_content .user_fullname {
+    font-size: 20px;
+    font-weight: 600;
+}
+.users .user .user_content .user_status {
+    font-style: italic;
+    color: dimgray;
+}
+.users .user .user_location{
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+.users .user .user_location div{
+    display: inline-block;
+    margin-right: 5px;
+}
+

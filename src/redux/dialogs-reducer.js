@@ -24,7 +24,7 @@ export const dialogsReducer = (state=initialState,action) => {
     switch(action.type) {
         case UPDATE_NEW_MESSAGE_BODY: {
             return {
-                ... state,
+                ...state,
                 newMessageBody: action.body,
             }            
         }
@@ -34,7 +34,7 @@ export const dialogsReducer = (state=initialState,action) => {
                 text: state.newMessageBody
             } 
             return {
-                ... state,
+                ...state,
                 messages: [...state.messages,newMessage],
                 newMessageBody: '',
             }

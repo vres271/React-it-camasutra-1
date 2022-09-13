@@ -1,6 +1,42 @@
 {"items":[
-  {"id":1,"followed":true,"fullName":"Nikita","photoUrl":"https://images.squarespace-cdn.com/content/v1/52e90534e4b07f1315fbe6f4/1392046490216-8RCZF0ZQD1RH00P7QVRN/ke17ZwdGBToddI8pDm48kAf-OpKpNsh_OjjU8JOdDKBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzAFzFJoCInLPKyj9AG8yKe7-Q2aFvP177fkO9TY_-rz5WoqqTEZpmj4yDEOdwKV68/andy-horner-portrait-circle-blog.jpg","status":"Hello everyone yeah","location":{"city":"Saratov","country":"Russia"}},
-  {"id":2,"followed":false,"fullName":"Jhon","photoUrl":"https://www.telstarjamaica.com/wp-content/uploads/2018/06/profile-circle-300x300.png","status":"must type my status here","location":{"city":"Kiev","country":"Ukrain"}},
-  {"id":3,"followed":true,"fullName":"Tom","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}},
-  {"id":4,"followed":true,"fullName":"Elisson Garden","photoUrl":"https://kfu-online.ru/file/pic/photo/1bf0c59238dd24a7f09a889483a50e8f_1024.png","status":"My name is you came. Stogovs Family.","location":{"city":"London is a Capital of","country":"Great Britn"}}
-],"error":null}
+   {"id":1,"followed":true,"fullName":"Nikita","photoUrl":"https://images.squarespace-cdn.com/content/v1/52e90534e4b07f1315fbe6f4/1392046490216-8RCZF0ZQD1RH00P7QVRN/ke17ZwdGBToddI8pDm48kAf-OpKpNsh_OjjU8JOdDKBZw-zPPgdn4jUwVcJE1ZvWQUxwkmyExglNqGp0IvTJZUJFbgE-7XRK3dMEBRBhUpzAFzFJoCInLPKyj9AG8yKe7-Q2aFvP177fkO9TY_-rz5WoqqTEZpmj4yDEOdwKV68/andy-horner-portrait-circle-blog.jpg","status":"Hello everyone yeah","location":{"city":"Saratov","country":"Russia"}}
+  ,{"id":2,"followed":false,"fullName":"Jhon","photoUrl":"https://www.telstarjamaica.com/wp-content/uploads/2018/06/profile-circle-300x300.png","status":"must type my status here","location":{"city":"Kiev","country":"Ukrain"}}
+  ,{"id":3,"followed":true,"fullName":"Tom","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":4,"followed":true,"fullName":"Elisson Garden","photoUrl":"https://kfu-online.ru/file/pic/photo/1bf0c59238dd24a7f09a889483a50e8f_1024.png","status":"My name is you came. Stogovs Family.","location":{"city":"London is a Capital of","country":"Great Britn"}}
+  ,{"id":5,"followed":true,"fullName":"Гусев Сергей Платонович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":6,"followed":true,"fullName":"Федотова Полина Львовна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":7,"followed":true,"fullName":"Дружинина Ксения Давидовна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":8,"followed":true,"fullName":"Горячев Александр Иванович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":9,"followed":true,"fullName":"Трофимов Иван Артёмович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":10,"followed":true,"fullName":"Короткова Полина Кирилловна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":11,"followed":true,"fullName":"Богданов Илья Ярославович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":12,"followed":false,"fullName":"Чернова Василиса Тимофеевна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":13,"followed":true,"fullName":"Устинова Стефания Кирилловна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":14,"followed":true,"fullName":"Дмитриева Дарья Ильинична","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":15,"followed":true,"fullName":"Шишкина София Владиславовна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":16,"followed":false,"fullName":"Копылов Илья Александрович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":17,"followed":true,"fullName":"Гусева Диана Тимофеевна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":18,"followed":false,"fullName":"Румянцева Кира Александровна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":19,"followed":true,"fullName":"Рогов Артур Михайлович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":20,"followed":true,"fullName":"Быкова Виктория Александровна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":21,"followed":true,"fullName":"Денисов Кирилл Арсенович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":22,"followed":true,"fullName":"Александров Артём Сергеевич","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":23,"followed":false,"fullName":"Федотова Ева Кирилловна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":24,"followed":true,"fullName":"Малышева Светлана Степановна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":25,"followed":false,"fullName":"Котова Амина Кирилловна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":26,"followed":true,"fullName":"Котова Софья Никитична","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":27,"followed":true,"fullName":"Назарова Фатима Тимофеевна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":28,"followed":true,"fullName":"Петров Марк Павлович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":29,"followed":true,"fullName":"Яковлев Станислав Владимирович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":30,"followed":true,"fullName":"Афанасьева Милана Михайловна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":31,"followed":false,"fullName":"Панов Владимир Михайлович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":32,"followed":true,"fullName":"Кондрашова Алиса Данииловна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":33,"followed":true,"fullName":"Чернова Вероника Дмитриевна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":34,"followed":true,"fullName":"Федорова Мария Александровна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":35,"followed":true,"fullName":"Борисов Артём Фёдорович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":36,"followed":false,"fullName":"Герасимов Марк Александрович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":37,"followed":true,"fullName":"Степанов Илья Тимурович","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":38,"followed":true,"fullName":"Горлова Эвелина Николаевна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+  ,{"id":39,"followed":true,"fullName":"Малышева Дарья Гордеевна","photoUrl":"","status":"USA guy here, yo!","location":{"city":"New York","country":"USA"}}
+
+]}

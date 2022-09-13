@@ -25,13 +25,22 @@ const requestListener = function (request, res) {
   console.log(request.method, request.url);
   let responseData = '';
 
+  const endPoint = request.url.split('?')[0];
   if(request.method==='GET') {
-    if(request.url === '/users') {
-      fs.readFile('data'+request.url+'.json', 'utf8', function (err,data) {
-        if (err) {
-          return console.log(err);
+    if(endPoint) {
+      fs.readFile('data'+endPoint+'.json', 'utf8', function (error,stringData) {
+        if (error) {
+          res.end(JSON.stringify({error}));
+        } else {
+          data = JSON.parse(stringData);
+          data.count = data.items.length;
+          let page = getParams.page?1*getParams.page:1;
+          let count = getParams.count?1*getParams.count:10;
+          if(data.items && data.items.length) {
+            data.items = data.items.slice( ((page-1)*count), ((page)*count) );
+          }
+          res.end(JSON.stringify(data));
         }
-        res.end(data);
       });
     };
   } else if(request.method==='POST') {

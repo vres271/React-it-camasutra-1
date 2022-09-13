@@ -1,6 +1,9 @@
-import Users from './Users';
+import React from 'react'
 import { connect } from 'react-redux';
-import { followAC, setUsersAC, unfollowAC } from '../../redux/users-reducer';
+import { followAC, setUsersAC, unfollowAC, setCurrentPageAC, setTotalUsersCountAC } from '../../redux/users-reducer';
+import * as axios from 'axios';
+import Users from './Users';
+
 
 const mapStateToProps = (state)=>{
   return {
@@ -19,9 +22,37 @@ const mapDispatchToProps = (dispatch)=>{
     setUsers: (users)=>{
       dispatch(setUsersAC(users))
     },
+    setCurrentPage: (page)=>{
+      dispatch(setCurrentPageAC(page))
+    },
+    setTotalUsersCount: (count)=>{
+      dispatch(setTotalUsersCountAC(count))
+    },
   }
 }
 
-const UsersContainer = connect(mapStateToProps, mapDispatchToProps)(Users)
+class UsersContainer extends React.Component {
 
-export default UsersContainer;
+  componentDidMount() {
+      axios.get(`http://localhost:8006/users?page=${this.props.usersPage.currentPage}&count=${this.props.usersPage.pageSize}`)
+          .then(response=>{
+              this.props.setUsers(response.data.items)
+              this.props.setTotalUsersCount(response.data.count)
+          })
+  }
+
+  onSetCurrentPage = (page)=>{
+      this.props.setCurrentPage(page);
+      axios.get(`http://localhost:8006/users?page=${page}&count=${this.props.usersPage.pageSize}`)
+          .then(response=>this.props.setUsers(response.data.items))
+  }
+
+  render = ()=><Users
+      usersPage={this.props.usersPage}
+      onSetCurrentPage={this.onSetCurrentPage}
+      onUnfollow={this.props.onUnfollow}
+      onFollow={this.props.onFollow}
+  />
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)

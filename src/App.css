@@ -72,3 +72,8 @@ button:hover:disabled{
   background: none;
   border: 1px solid silver;
 }
+.loader{
+  position: absolute;
+  left:49%;
+  top:300px;
+}

@@ -1,5 +1,6 @@
 import Preloader from '../../common/Preloader/Preloader';
 import css from './ProfileInfo.module.css'
+import emptyUserPhoto from './../../../assets/images/user.png';
 
 
 const ProfileInfo = (props)=>{
@@ -13,7 +14,7 @@ const ProfileInfo = (props)=>{
       </div>
       <div className={css.description_block}>
         <div className={css.left_block}>
-          <img src={props.profile.photos.large} alt="" />
+          <img src={props.profile.photos.large||emptyUserPhoto} alt="" />
         </div>
         <div className={css.right_block}>
           <h1>{props.profile.fullName}</h1>

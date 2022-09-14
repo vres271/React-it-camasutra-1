@@ -1,6 +1,5 @@
 // import logo from './logo.svg';
 import './App.css';
-import Profile from './components/Profile/Profile';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
@@ -9,7 +8,7 @@ import Settings from './components/Settings/Settings';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import UsersContainer from './components/Users/UsersContainer';
-// import Sidebar from './components/Sidebar/Sidebar';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 const App = (props)=> {
   return (
@@ -22,8 +21,9 @@ const App = (props)=> {
           <Routes>
             <Route path='/dialogs' element={<DialogsContainer />}></Route>
             <Route path='/dialogs/*' element={<DialogsContainer />}></Route>
-            <Route path='/' element={<Profile />}></Route>
-            <Route path='/profile' element={<Profile />}></Route>
+            <Route path='/' element={<ProfileContainer />}></Route>
+            <Route path='/profile' element={<ProfileContainer />}></Route>
+            <Route path='/profile/*' element={<ProfileContainer />}></Route>
             <Route path='/users' element={<UsersContainer  />}></Route>
             <Route path='/news' element={<News />}></Route>
             <Route path='/music' element={<Music />}></Route>

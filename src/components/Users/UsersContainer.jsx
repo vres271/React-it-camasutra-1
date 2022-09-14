@@ -1,36 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { followAC, setUsersAC, unfollowAC, setCurrentPageAC, setTotalUsersCountAC, setIsFetchingAC } from '../../redux/users-reducer';
+import { follow, setUsers, unfollow, setCurrentPage, setTotalUsersCount, setIsFetching } from '../../redux/users-reducer';
 import * as axios from 'axios';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
 
 const mapStateToProps = (state)=>{
   return {
-    usersPage: state.usersPage,
-  }
-}
-
-const mapDispatchToProps = (dispatch)=>{
-  return {
-    onFollow: (userId)=>{
-      dispatch(followAC(userId));
-    },
-    onUnfollow: (userId)=>{
-      dispatch(unfollowAC(userId))
-    },
-    setUsers: (users)=>{
-      dispatch(setUsersAC(users))
-    },
-    setCurrentPage: (page)=>{
-      dispatch(setCurrentPageAC(page))
-    },
-    setTotalUsersCount: (count)=>{
-      dispatch(setTotalUsersCountAC(count))
-    },
-    setIsFetching: (isFetching)=>{
-      dispatch(setIsFetchingAC(isFetching))
-    },
+    users: state.usersPage.users,    
+    pageSize: state.usersPage.pageSize,
+    totalUsersCount: state.usersPage.totalUsersCount,
+    currentPage: state.usersPage.currentPage,
+    isFetching: state.usersPage.isFetching,
   }
 }
 
@@ -38,7 +19,7 @@ class UsersContainer extends React.Component {
 
   componentDidMount() {
       this.props.setIsFetching(true);
-      axios.get(`http://localhost:8006/users?page=${this.props.usersPage.currentPage}&count=${this.props.usersPage.pageSize}`)
+      axios.get(`http://localhost:8006/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
           .then(response=>{
               this.props.setUsers(response.data.items)
               this.props.setTotalUsersCount(response.data.count)
@@ -49,7 +30,7 @@ class UsersContainer extends React.Component {
   onSetCurrentPage = (page)=>{
       this.props.setCurrentPage(page);
       this.props.setIsFetching(true);
-      axios.get(`http://localhost:8006/users?page=${page}&count=${this.props.usersPage.pageSize}`)
+      axios.get(`http://localhost:8006/users?page=${page}&count=${this.props.pageSize}`)
           .then(response=>{
             this.props.setUsers(response.data.items)
             this.props.setIsFetching(false);
@@ -57,14 +38,25 @@ class UsersContainer extends React.Component {
   }
 
   render = ()=><>
-      {this.props.usersPage.isFetching?<Preloader/>:null}
+      {this.props.isFetching?<Preloader/>:null}
       <Users
-        usersPage={this.props.usersPage}
+        users={this.props.users}
+        pageSize={this.props.pageSize}
+        totalUsersCount={this.props.totalUsersCount}
+        currentPage={this.props.currentPage}        
+        isFetching={this.props.isFetching}        
         onSetCurrentPage={this.onSetCurrentPage}
-        onUnfollow={this.props.onUnfollow}
-        onFollow={this.props.onFollow}
+        unfollow={this.props.unfollow}
+        follow={this.props.follow}
       />
     </>
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(UsersContainer)
+export default connect(mapStateToProps, {
+  follow,
+  unfollow,
+  setUsers,
+  setCurrentPage,
+  setTotalUsersCount,
+  setIsFetching,
+})(UsersContainer)

@@ -1,5 +1,6 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SET_USER_PROFILE = 'SET-USER-PROFILE';
 
 const testMess = 'Мы любим животных и стараемся поддерживать тех из них, кому не посчастливилось иметь ласковых хозяев и тёплый кров. Один из проверенных способов это сделать — помочь приюту для животных Домашний. У этих ребят живёт более 1500 четвероногих, и благодаря их труду ежегодно сотни питомцев находят свой новый дом.';
 let initialState = {
@@ -11,6 +12,7 @@ let initialState = {
         {name:'Как дела у меня', message:testMess, likescount: Math.round(100*Math.random())},
     ],
     newPostText: 'New post text',
+    profile: null,
 }
 
 const profileReducer = (state=initialState,action) => {
@@ -32,6 +34,11 @@ const profileReducer = (state=initialState,action) => {
                 ...state,
                 newPostText: action.newText,
             };
+        case SET_USER_PROFILE: 
+            return {
+                ...state,
+                profile: action.profile,
+            };
         default:
             return state;
     }
@@ -39,5 +46,6 @@ const profileReducer = (state=initialState,action) => {
 
 export const addPostActionCreator = ()=>({type: ADD_POST})
 export const updateTextActionCreator = (text)=>({type:UPDATE_NEW_POST_TEXT, newText: text})
+export const setUserProfile = (profile)=>({type:SET_USER_PROFILE, profile})
 
 export default profileReducer;

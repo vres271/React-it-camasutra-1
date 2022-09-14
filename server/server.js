@@ -23,23 +23,46 @@ const requestListener = function (request, res) {
 
   const getParams = parseGET(request.url);
   console.log(request.method, request.url);
-  let responseData = '';
 
   const endPoint = request.url.split('?')[0];
+  const path = endPoint.split('/');
+  const svc = path[1];
+  let responseData = {};
   if(request.method==='GET') {
-    if(endPoint) {
-      fs.readFile('data'+endPoint+'.json', 'utf8', function (error,stringData) {
+    if(svc) {
+      fs.readFile('data/'+svc+'.json', 'utf8', function (error,stringData) {
         if (error) {
           res.end(JSON.stringify({error}));
         } else {
           data = JSON.parse(stringData);
-          data.count = data.items.length;
-          let page = getParams.page?1*getParams.page:1;
-          let count = getParams.count?1*getParams.count:10;
-          if(data.items && data.items.length) {
-            data.items = data.items.slice( ((page-1)*count), ((page)*count) );
+          if(path[2]) {
+            item = data.items.filter(item=>item.id==path[2])[0]
+            if(svc==='users') {
+              responseData = {
+                ... item,
+                userId:  item.id,
+                lookingForAJob:  false,
+                lookingForAJobDescription:  'The Storage',
+                contacts:{
+                  github: 'github/hub/git',
+                  youtube: 'you.tube',
+                },
+                photos:{
+                  small: item.photoUrl,
+                  large: item.photoUrl,
+                },
+              }
+            }
+          } else {
+            responseData.count = data.items.length;
+            let page = getParams.page?1*getParams.page:1;
+            let count = getParams.count?1*getParams.count:10;
+            if(data.items && data.items.length) {
+              responseData.items = data.items.slice( ((page-1)*count), ((page)*count) );
+            }
           }
-          res.end(JSON.stringify(data));
+          res.end(JSON.stringify(responseData));
+          return;
         }
       });
     };
@@ -48,9 +71,10 @@ const requestListener = function (request, res) {
     request.on('data', function (_data) {
       jsonString = _data;
       let data = JSON.parse(jsonString);
+      res.end(JSON.stringify(responseData));
+      return;
     });
   }
-  
 
 }
 const server = http.createServer(requestListener);

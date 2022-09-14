@@ -1,6 +1,7 @@
 import Preloader from '../../common/Preloader/Preloader';
 import css from './ProfileInfo.module.css'
 import emptyUserPhoto from './../../../assets/images/user.png';
+import bgImage from './../../../assets/images/bg.jpg';
 
 
 const ProfileInfo = (props)=>{
@@ -10,7 +11,7 @@ const ProfileInfo = (props)=>{
   return (
     <div>
       <div>
-        <img src='https://mooka.ie/img/sliderimages/slider-adult-desk-background.jpg'  width='980px' alt=''/>
+        <img src={bgImage}  width='980px' alt=''/>
       </div>
       <div className={css.description_block}>
         <div className={css.left_block}>

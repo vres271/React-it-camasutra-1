@@ -18,7 +18,8 @@ const parseGET = url=>{
 
 const requestListener = function (request, res) {
   res.setHeader('Content-Type', 'application/json');
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader('Access-Control-Allow-Credentials', true);
   res.writeHead(200);
 
   const getParams = parseGET(request.url);
@@ -30,13 +31,38 @@ const requestListener = function (request, res) {
   let responseData = {};
   if(request.method==='GET') {
     if(svc) {
+
+      if(svc==='auth') {
+        if(path[2]==='me') {
+
+          let errorResponse = {
+            resultCode: 1,
+            data: {},
+            messages: ['You are not authorized'],
+          };
+
+          responseData = {
+            resultCode: 0,
+            messages: [],
+            data: {
+              userId: 1,
+              email: 'user1mail@mail.ml',
+              login: 'user1',
+            }
+          };
+
+          return res.end(JSON.stringify(responseData));
+        } 
+        return res.end(JSON.stringify(responseData));
+      }
+
       fs.readFile('data/'+svc+'.json', 'utf8', function (error,stringData) {
         if (error) {
           res.end(JSON.stringify({error}));
         } else {
-          data = JSON.parse(stringData);
+          const data = JSON.parse(stringData);
           if(path[2]) {
-            item = data.items.filter(item=>item.id==path[2])[0]
+            let item = data.items.filter(item=>item.id==path[2])[0]
             if(svc==='users') {
               responseData = {
                 ... item,
@@ -67,6 +93,23 @@ const requestListener = function (request, res) {
       });
     };
   } else if(request.method==='POST') {
+
+    if(svc==='follow') {
+      fs.readFile('data/users.json', 'utf8', function (error,stringData) {
+        const data = JSON.parse(stringData);
+        let item = data.items.filter(item=>item.id==path[2])[0];
+        item.follow = true;
+        responseData = {
+          resultCode: 0,
+          messages:[],
+          data:{}
+        }
+        res.end(JSON.stringify(responseData));
+        return;
+      })
+      return;
+    }
+
     let jsonString = '';
     request.on('data', function (_data) {
       jsonString = _data;

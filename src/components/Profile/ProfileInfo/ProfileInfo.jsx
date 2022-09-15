@@ -24,7 +24,7 @@ const ProfileInfo = (props)=>{
           <br/>
           <div>
             <h3>Location</h3>
-            <div>{props.profile.location.country}, {props.profile.location.city}</div>
+            {/* <div>{props.profile.location.country}, {props.profile.location.city}</div> */}
           </div>
           <div>
             <h3>Contacts</h3>

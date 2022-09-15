@@ -1,9 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { follow, setUsers, unfollow, setCurrentPage, setTotalUsersCount, setIsFetching } from '../../redux/users-reducer';
-import * as axios from 'axios';
 import Users from './Users';
 import Preloader from '../common/Preloader/Preloader';
+import {usersAPI} from './../../api/api';
 
 const mapStateToProps = (state)=>{
   return {
@@ -19,22 +19,20 @@ class UsersContainer extends React.Component {
 
   componentDidMount() {
       this.props.setIsFetching(true);
-      axios.get(`http://localhost:8006/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
-          .then(response=>{
-              this.props.setUsers(response.data.items)
-              this.props.setTotalUsersCount(response.data.count)
-              this.props.setIsFetching(false);
-          })
+      usersAPI.getUsers(this.props.page,this.props.pageSize).then(data=>{
+          this.props.setUsers(data.items)
+          this.props.setTotalUsersCount(data.totalCount)
+          this.props.setIsFetching(false);
+      })
   }
 
   onSetCurrentPage = (page)=>{
       this.props.setCurrentPage(page);
       this.props.setIsFetching(true);
-      axios.get(`http://localhost:8006/users?page=${page}&count=${this.props.pageSize}`)
-          .then(response=>{
-            this.props.setUsers(response.data.items)
-            this.props.setIsFetching(false);
-          })
+      usersAPI.getUsers(page,this.props.pageSize).then(data=>{
+          this.props.setUsers(data.items)
+          this.props.setIsFetching(false);
+        })
   }
 
   render = ()=><>

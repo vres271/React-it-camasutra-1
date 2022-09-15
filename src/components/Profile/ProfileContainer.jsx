@@ -20,7 +20,12 @@ const withRouter = WrappedComponent => props => {
 class ProfileContainer extends React.Component {
 
     componentDidMount() {
-        axios.get(`http://localhost:8006/users/${this.props.params.userId||1}`)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${this.props.params.userId||25899}`,{
+            withCredentials: true,
+            headers: {
+                'API-KEY':'29838159-a78c-45fd-ae74-ff93a3ab0840'
+            }
+        })
             .then(response=>{
                 this.props.setUserProfile(response.data)
             })

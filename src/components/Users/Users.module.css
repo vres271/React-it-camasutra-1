@@ -52,6 +52,13 @@
 .users .user .user_sidebar_right button{
     width: 90px;
 }
+.users .user .user_sidebar_right button.unfollowed{
+    background: rgba(165, 199, 223, 0.322);
+    color: rgb(52, 52, 52);
+}
+.users .user .user_sidebar_right button.followed{
+    
+}
 
 .pages_select{
     text-align: center;

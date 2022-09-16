@@ -1,8 +1,9 @@
-import {usersAPI} from './../api/api';
+import {usersAPI,profileAPI} from './../api/api';
 
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
+const SET_USER_STATUS = 'SET-USER-STATUS';
 
 const testMess = 'Мы любим животных и стараемся поддерживать тех из них, кому не посчастливилось иметь ласковых хозяев и тёплый кров. Один из проверенных способов это сделать — помочь приюту для животных Домашний. У этих ребят живёт более 1500 четвероногих, и благодаря их труду ежегодно сотни питомцев находят свой новый дом.';
 let initialState = {
@@ -15,6 +16,7 @@ let initialState = {
     ],
     newPostText: 'New post text',
     profile: null,
+    status: '',
 }
 
 const profileReducer = (state=initialState,action) => {
@@ -41,6 +43,11 @@ const profileReducer = (state=initialState,action) => {
                 ...state,
                 profile: action.profile,
             };
+        case SET_USER_STATUS: 
+            return {
+                ...state,
+                status: action.status,
+            };
         default:
             return state;
     }
@@ -49,10 +56,25 @@ const profileReducer = (state=initialState,action) => {
 export const addPostActionCreator = ()=>({type: ADD_POST})
 export const updateTextActionCreator = (text)=>({type:UPDATE_NEW_POST_TEXT, newText: text})
 export const setUserProfile = (profile)=>({type:SET_USER_PROFILE, profile})
+export const setUserStatus = (status)=>({type:SET_USER_STATUS, status})
 
 export const getUserProfile = (userId)=>(dispatch)=>{
     usersAPI.getProfile(userId).then(data=>{
         dispatch(setUserProfile(data));
+    })
+}
+
+export const getUserStatus = (userId)=>(dispatch)=>{
+    profileAPI.getStatus(userId).then(status=>{
+        dispatch(setUserStatus(status));
+    })
+}
+
+export const updateUserStatus = (status)=>(dispatch)=>{
+    profileAPI.updateStatus(status).then(data=>{
+        if(data.resultCode === 0) {
+            dispatch(setUserStatus(status));
+        }
     })
 }
 

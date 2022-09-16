@@ -21,7 +21,7 @@ const ProfileInfo = (props)=>{
         <div className={css.right_block}>
           <h1>{props.profile.fullName}</h1>
           <small>{props.profile.status}</small>
-          <ProfileStatus status={"hello my friends"}/>
+          <ProfileStatus status={props.status} updateUserStatus={props.updateUserStatus}/>
           <br/>
           <br/>
           <div>

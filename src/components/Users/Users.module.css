@@ -59,6 +59,11 @@
 .users .user .user_sidebar_right button.followed{
     
 }
+.users .user .user_sidebar_right button:disabled{
+    background: rgba(165, 199, 223, 0.322);
+    cursor: default;
+    color: rgb(168, 185, 195);
+}
 
 .pages_select{
     text-align: center;

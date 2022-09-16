@@ -1,3 +1,4 @@
+import {Navigate} from 'react-router-dom';
 import css from './Dialogs.module.css';
 import DialogItem from './Dialogtem/DialogItem';
 import Message from './Message/DialogItem';
@@ -13,7 +14,7 @@ const Dialogs = (props)=>{
   }
 
   let newMessageBody = props.dialogsPage.newMessageBody;
-
+  
   return (
     <div >
       <h2>Duialogs</h2>

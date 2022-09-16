@@ -31,20 +31,8 @@ const Users = (props)=>{
             <div  className={css.user_sidebar_right}>
                 <div>
                     {user.followed
-                        ?<button className={css.followed} onClick={()=>{
-                                usersAPI.unfollow(user.id).then(data=>{
-                                    if(data.resultCode === 0) {
-                                        props.unfollow(user.id)
-                                    }
-                                })
-                        }}>Unfollow</button>
-                        :<button className={css.unfollowed} onClick={()=>{
-                            usersAPI.follow(user.id).then(data=>{
-                                if(data.resultCode === 0) {
-                                    props.follow(user.id)
-                                }
-                            })
-                        }}>Follow</button>}
+                        ?<button disabled={props.followingInProggress.some(id=>id===user.id)} className={css.followed} onClick={()=>props.unfollow(user.id)}>Unfollow</button>
+                        :<button disabled={props.followingInProggress.some(id=>id===user.id)} className={css.unfollowed} onClick={()=>props.follow(user.id)}>Follow</button>}
                 </div>
             </div>
         </div>

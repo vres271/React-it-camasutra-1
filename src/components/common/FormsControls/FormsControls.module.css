@@ -6,3 +6,13 @@
 .form_control.error span{
     color: tomato;
 }
+
+.form_summary_error{
+    color: tomato;
+    border: 1px solid tomato;
+    background: rgba(255, 99, 71, 0.14);
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 5px 0;
+    display: inline-block;
+}

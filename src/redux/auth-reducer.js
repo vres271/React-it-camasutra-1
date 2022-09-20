@@ -1,4 +1,6 @@
 import {authAPI} from './../api/api';
+import { stopSubmit } from 'redux-form';
+
 const SET_USER_DATA = 'SET_USER_DATA';
 
 let initialState = {
@@ -14,21 +16,39 @@ const authReducer = (state=initialState,action) => {
         case SET_USER_DATA:
             return  {
                 ...state,
-                ...action.data,
-                isAuth: true,
+                ...action.payload,
             };
         default:
             return state;
     }
 }
 
-export const setAuthUserData = (userId,email,login)=>({type: SET_USER_DATA, data:{userId,email,login}})
+export const setAuthUserData = (userId,email,login, isAuth)=>({type: SET_USER_DATA, payload:{userId,email,login, isAuth}})
 
 export const getAuth = ()=>(dispatch)=>{
-    authAPI.auth().then(data=>{
+    return authAPI.auth().then(data=>{
         if(data.resultCode === 0) {
-            let {userId,email,login} = data.data;
-            dispatch(setAuthUserData(userId,email,login));
+            let {id,email,login} = data.data;
+            dispatch(setAuthUserData(id,email,login,true));
+        }
+    })
+}
+
+export const login = (email,password,rememberMe)=>(dispatch)=>{
+    authAPI.login(email,password,rememberMe).then(data=>{
+        if(data.resultCode === 0) {
+            dispatch(getAuth());
+        } else {
+            const message = data.messages.length>0 ? data.messages.join('; ') : 'Email or Password is wrong';
+            dispatch(stopSubmit('login',{_error: message}));
+        }
+    })
+}
+
+export const logout = ()=>(dispatch)=>{
+    authAPI.logout().then(data=>{
+        if(data.resultCode === 0) {
+            dispatch(setAuthUserData(null,null,null,false));
         }
     })
 }

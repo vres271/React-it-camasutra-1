@@ -60,7 +60,7 @@ export default compose(
     setFollowingInProggress,
     getUsers,
   }),
-  withAuthRedirect,
+  //withAuthRedirect,
 )(UsersContainer);
 
 // export default connect(mapStateToProps, {

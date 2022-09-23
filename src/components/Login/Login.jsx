@@ -1,5 +1,5 @@
 import {reduxForm,Field} from 'redux-form';
-import { Input } from '../common/FormsControls/FormsControls';
+import { createField, Input } from '../common/FormsControls/FormsControls';
 import { required } from '../../utils/validators/validators';
 import { connect } from 'react-redux';
 import { login } from '../../redux/auth-reducer';
@@ -18,19 +18,13 @@ const Login = (props)=>{
 }
 
 
-const LoginForm = (props)=>{
-    return <form onSubmit={props.handleSubmit}>
-            <div>
-                <Field name="email" validate={[required]} component={Input} type="text" placeholder="email"/>
-            </div>
-            <div>
-                <Field name="password" validate={[required]} component={Input} type="password" placeholder="Password"/>
-            </div>
-            <div>
-                <Field name="rememberMe" id='rememberMe' component="input" type="checkbox" /><label htmlFor="rememberMe"> Remember me</label>
-            </div>
-            {props.error&&<div className={css.form_summary_error}>
-                {props.error}
+const LoginForm = ({handleSubmit,error})=>{
+    return <form onSubmit={handleSubmit}>
+            {createField("email","email",[required],Input,{type:'text'})}
+            {createField("Password","password",[required],Input,{type:'password'})}
+            {createField("","rememberMe",[],Input,{type:'checkbox'},'Remember me')}
+            {error&&<div className={css.form_summary_error}>
+                {error}
             </div>}
             <div>
                 <button>Login</button>

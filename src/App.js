@@ -25,7 +25,7 @@ class App extends React.Component  {
     if(!this.props.initialized) return <Preloader/>
     
     return (
-    <BrowserRouter>
+    <BrowserRouter id="br">
       <div className='app-wrapper'>
         <HeaderContainer/>
         <Navbar />

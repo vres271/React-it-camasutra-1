@@ -1,0 +1,20 @@
+.pages_select{
+    text-align: center;
+    padding: 5px;
+}
+.pages_select div{
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.pages_select div:hover{
+    background:rgb(250, 238, 168);
+}
+.pages_select .selected_page{
+    font-weight: bold;
+    background: gold;
+}
+.pages_select .selected_page:hover{
+    background: rgb(255, 223, 40);
+}
+

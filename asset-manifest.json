@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-it-camasutra-1/static/css/main.b08480b1.css",
-    "main.js": "/React-it-camasutra-1/static/js/main.df33a878.js",
+    "main.js": "/React-it-camasutra-1/static/js/main.1c8e15bc.js",
     "static/css/93.1c31afb3.chunk.css": "/React-it-camasutra-1/static/css/93.1c31afb3.chunk.css",
     "static/js/93.ac81c175.chunk.js": "/React-it-camasutra-1/static/js/93.ac81c175.chunk.js",
     "static/css/987.47800612.chunk.css": "/React-it-camasutra-1/static/css/987.47800612.chunk.css",
@@ -11,7 +11,7 @@
     "static/media/loader.gif": "/React-it-camasutra-1/static/media/loader.57c5eaa1ac756b6c778b.gif",
     "index.html": "/React-it-camasutra-1/index.html",
     "main.b08480b1.css.map": "/React-it-camasutra-1/static/css/main.b08480b1.css.map",
-    "main.df33a878.js.map": "/React-it-camasutra-1/static/js/main.df33a878.js.map",
+    "main.1c8e15bc.js.map": "/React-it-camasutra-1/static/js/main.1c8e15bc.js.map",
     "93.1c31afb3.chunk.css.map": "/React-it-camasutra-1/static/css/93.1c31afb3.chunk.css.map",
     "93.ac81c175.chunk.js.map": "/React-it-camasutra-1/static/js/93.ac81c175.chunk.js.map",
     "987.47800612.chunk.css.map": "/React-it-camasutra-1/static/css/987.47800612.chunk.css.map",
@@ -19,6 +19,6 @@
   },
   "entrypoints": [
     "static/css/main.b08480b1.css",
-    "static/js/main.df33a878.js"
+    "static/js/main.1c8e15bc.js"
   ]
 }

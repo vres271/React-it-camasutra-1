@@ -2,12 +2,12 @@
     text-align: center;
     padding: 5px;
 }
-.pages_select div{
+.pages_select div,.pages_select span{
     display: inline-block;
     padding: 5px 10px;
     cursor: pointer;
 }
-.pages_select div:hover{
+.pages_select div:hover,.pages_select span:hover{
     background:rgb(250, 238, 168);
 }
 .pages_select .selected_page{

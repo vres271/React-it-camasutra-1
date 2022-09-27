@@ -23,5 +23,4 @@ export default compose(
   withAuthRedirect,
 )(Dialogs);
 
-//const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(withAuthRedirect(Dialogs))
 

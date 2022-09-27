@@ -31,8 +31,8 @@ const ProfileInfo = (props)=>{
           </div>
           <div>
             <h3>Contacts</h3>
-            <div><b>github</b>: <a href="{props.profile.contacts.github}">{props.profile.contacts.github}</a></div>
-            <div><b>youtube</b>: <a href="{props.profile.contacts.youtube}">{props.profile.contacts.youtube}</a></div>
+            <div><b>GitHub:</b> <a href="{props.profile.contacts.github}">{props.profile.contacts.github}</a></div>
+            <div><b>YouTube:</b> <a href="{props.profile.contacts.youtube}">{props.profile.contacts.youtube}</a></div>
           </div>
         </div> 
       </div>

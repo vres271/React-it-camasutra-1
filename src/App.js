@@ -69,7 +69,7 @@ const AppContainer = compose(
 
 const SamuraiJSApp = (props)=>{
   return (
-    <BrowserRouter id="br">
+    <BrowserRouter id="br" basename='/'>
       <Provider store={store}>
         <AppContainer />
       </Provider>

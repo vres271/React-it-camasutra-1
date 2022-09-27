@@ -15,6 +15,8 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import { initializeApp } from './redux/app-reducer';
 import Preloader from './components/common/Preloader/Preloader';
+import { Provider } from 'react-redux';
+import store from './redux/redux-store';
 
 class App extends React.Component  {
   componentDidMount() {
@@ -25,7 +27,6 @@ class App extends React.Component  {
     if(!this.props.initialized) return <Preloader/>
     
     return (
-    <BrowserRouter id="br">
       <div className='app-wrapper'>
         <HeaderContainer/>
         <Navbar />
@@ -44,7 +45,6 @@ class App extends React.Component  {
           </Routes>
         </div>
       </div>
-    </BrowserRouter>
     )
   }
 };
@@ -62,8 +62,19 @@ const withRouter = WrappedComponent => props => {
 };
 
 
-export default compose(
+const AppContainer = compose(
   withRouter,
   connect( state=>({initialized: state.app.initialized}) , {initializeApp}),
 )(App);
 
+const SamuraiJSApp = (props)=>{
+  return (
+    <BrowserRouter id="br">
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    </BrowserRouter>
+  )
+}
+
+export default SamuraiJSApp;

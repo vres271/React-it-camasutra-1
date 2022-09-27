@@ -3,7 +3,7 @@ import Navbar from './components/Navbar/Navbar';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
-import { BrowserRouter, Route, Routes, useParams } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Routes, useParams } from 'react-router-dom';
 import UsersContainer from './components/Users/UsersContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
@@ -69,11 +69,11 @@ const AppContainer = compose(
 
 const SamuraiJSApp = (props)=>{
   return (
-    <BrowserRouter id="br" basename={process.env.PUBLIC_URL}>
+    <HashRouter id="br" >
       <Provider store={store}>
         <AppContainer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
